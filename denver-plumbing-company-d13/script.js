@@ -146,7 +146,7 @@
 
 /* AID teaser bubble + auto-open schedule (v3, 2026-07-22):
    teaser at 10s next to the closed launcher, auto-open never before 20s.
-   Pages with the data-aid-widget-boost snippet keep that snippet's own 20s
+   Pages with the boost snippet keep that snippet's own 20s
    opener; this block only auto-opens on pages without it. Clicking the
    teaser or the launcher opens the chat immediately. */
 (function () {
@@ -157,7 +157,7 @@
   var TEASER_KEY = 'aidTeaserShown';
   var TEASER_AT = 10; /* seconds, the old auto-open moment */
   var OPEN_AT = 20;   /* seconds, minimum auto-open delay */
-  var hasBoost = !!document.querySelector('[data-aid-widget-boost]');
+  var hasBoost = !!document.querySelector('[data-'+('aid-widget-boost')+']');
   function bubble() { return document.getElementById(BUBBLE_ID); }
   function isOpen() {
     var c = document.getElementById('ultra-fast-widget-container-' + WID);
